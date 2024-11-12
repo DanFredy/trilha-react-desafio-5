@@ -7,13 +7,17 @@ export const getPosts = async () => {
         return data;
     }
 
-    return []
+    return [];
 }
 
 export const getPostBySlug = async (id) => {
 
-    //TODO: BUSCAR UM POST EM ESPECIFICO.
-    //const {data} = await api.get(`/post?id=eq.${id}`)
+    // BUSCAR UM POST EM ESPECIFICO.
+    const { data } = await api.get(`/posts/${id}`);
 
-    return {}
+    if (data) {
+        return data;
+    }
+
+    return {};
 }
